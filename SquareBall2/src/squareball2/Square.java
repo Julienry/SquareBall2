@@ -32,7 +32,6 @@ public class Square {
     double currentAngle;
     boolean esquerda, direita, cima, baixo, parado;
     private BufferedImage player;
-    private BufferedImage player2;
     private Inimigo1 t1;
     private boolean vida = true;
     AStar estrela;
@@ -40,8 +39,7 @@ public class Square {
 
     public Square(Jogo jogo) throws IOException {
         this.vida = vida;
-        player = ImageIO.read(new File("square.bmp"));
-        player2 = ImageIO.read(new File("squarev1.bmp"));
+        player = ImageIO.read(new File("Imagens/square.bmp"));
         this.x = x;
         this.y = y;
         this.jogo = jogo;

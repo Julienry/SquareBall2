@@ -23,15 +23,13 @@ public class Inimigo1 {
     double currentAngle;
     boolean colisao;
     private BufferedImage inimigo1;
-    private BufferedImage inimigoD;
     private Wall wall;
 
     public Inimigo1(Jogo jogo) throws IOException {
         this.x = x;
         this.y = y;
         this.jogo = jogo;
-        inimigo1 = ImageIO.read(new File("inimigo1.bmp"));
-        inimigoD = ImageIO.read(new File("inimigoD.bmp"));
+        inimigo1 = ImageIO.read(new File("Imagens/inimigo1.bmp"));
         this.largura = 150;
         this.altura  = 150;
         this.srcx1  = 0;

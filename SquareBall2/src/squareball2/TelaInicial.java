@@ -22,8 +22,8 @@ public class TelaInicial {
     public int xs = 645;
     public int ys = 445;
     public TelaInicial(Jogo jogo) throws IOException {
-        seta = ImageIO.read(new File("seta.bmp"));
-        tela = ImageIO.read(new File("telainicial2.bmp"));
+        seta = ImageIO.read(new File("Imagens/seta.bmp"));
+        tela = ImageIO.read(new File("Imagens/telainicial2.bmp"));
         this.x = x;
         this.y = y;
         this.xs = xs;

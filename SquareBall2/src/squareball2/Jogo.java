@@ -52,8 +52,6 @@ public class Jogo extends JPanel /*implements MouseListener, MouseMotionListener
 
     TelaInicial telainicial = new TelaInicial(this);
     TelaInicial seta = new TelaInicial(this);
-    TelaWinLose win = new TelaWinLose(this);
-    TelaWinLose lose = new TelaWinLose(this);
     SelecaoFases sf = new SelecaoFases(this);
     SelecaoFases setaf = new SelecaoFases(this);
     SelecaoFases sf1 = new SelecaoFases(this);
@@ -79,38 +77,11 @@ public class Jogo extends JPanel /*implements MouseListener, MouseMotionListener
     Inimigo1 t1114 = new Inimigo1(this);
     Inimigo1 t1115 = new Inimigo1(this);
 
-    //AStar bob = new AStar(22, 14, new Node(12, 6), this.square.finalNode);
-    //Inimigo2 t2 = new Inimigo2(this, bob);
     Wall wall = new Wall(this);
-
-    /*private  InputStream musica;
-    private  InputStream bolaImp;
-    private  InputStream bolaChute;
-    private  InputStream inimigoDes;
-    private  InputStream win;
-    private  InputStream lose;
-    InputStream musica = new FileInputStream("Square and ball.wav");
-    InputStream bolaChute = new FileInputStream("chute bola.wav");
-    InputStream inimigoDes = new FileInputStream("Inimigo destruido.wav");
-    InputStream win = new FileInputStream("Win.wav");
-    InputStream lose = new FileInputStream("Derrota.wav");
-    InputStream bolaImp = new FileInputStream("Bola impacto.wav");
-    
-    SoundEffect musica = new AudioStream(new FileInputStream("Square and ball.wav"));
-    AudioStream bolaImp = new AudioStream(new FileInputStream("Bola impacto.wav"));
-    AudioStream bolaChute = new AudioStream(new FileInputStream("chute bola.wav"));
-    AudioStream inimigoDes = new AudioStream(new FileInputStream("Inimigo destruido.wav"));
-    AudioStream win = new AudioStream(new FileInputStream("Win.wav"));
-    AudioStream lose = new AudioStream(new FileInputStream("Derrota.wav"));
-    
-    AudioData MD;
-    ContinuousAudioDataStream loop=null;*/
-    AudioStream musica = new AudioStream(new FileInputStream("Square and ball.wav"));
 
     private BufferedImage player;
     private BufferedImage bola;
     private BufferedImage inimigot1;
-    private BufferedImage inimigot2;
     private BufferedImage telai;
     private BufferedImage setai;
     private BufferedImage selecaof;
@@ -118,18 +89,13 @@ public class Jogo extends JPanel /*implements MouseListener, MouseMotionListener
     private BufferedImage f2;
     private BufferedImage f3;
     private BufferedImage fseta;
-    private BufferedImage twin;
-    private BufferedImage tlose;
-
+    
     private int space = 50;
 
     private boolean jogar = true;
     private boolean sair = false;
 
     private boolean selecao = false;
-
-    private boolean vencer = false;
-    private boolean perder = false;
 
     private boolean menu = true;
     private boolean iniciar = false;
@@ -210,19 +176,16 @@ public class Jogo extends JPanel /*implements MouseListener, MouseMotionListener
 
     public Jogo() throws IOException, LineUnavailableException {
         this.setBackground(Color.white); // seta que o fundo da janela eh branco
-        player = ImageIO.read(new File("square.bmp"));
-        bola = ImageIO.read(new File("ball.bmp"));
-        telai = ImageIO.read(new File("telainicial.bmp"));
-        setai = ImageIO.read(new File("seta.bmp"));
-        fseta = ImageIO.read(new File("seta.bmp"));
-        selecaof = ImageIO.read(new File("selecaofases.bmp"));
-        f1 = ImageIO.read(new File("fase1.bmp"));
-        f2 = ImageIO.read(new File("fase2.bmp"));
-        f2 = ImageIO.read(new File("fase3.bmp"));
-        inimigot1 = ImageIO.read(new File("inimigo1.bmp"));
-        inimigot2 = ImageIO.read(new File("inimigo1.bmp"));
-        twin = ImageIO.read(new File("imgvitoria.bmp"));
-        tlose = ImageIO.read(new File("imgderrota.bmp"));
+        player = ImageIO.read(new File("Imagens/square.bmp"));
+        bola = ImageIO.read(new File("Imagens/ball.bmp"));
+        telai = ImageIO.read(new File("Imagens/telainicial.bmp"));
+        setai = ImageIO.read(new File("Imagens/seta.bmp"));
+        fseta = ImageIO.read(new File("Imagens/seta.bmp"));
+        selecaof = ImageIO.read(new File("Imagens/selecaofases.bmp"));
+        f1 = ImageIO.read(new File("Imagens/fase1.bmp"));
+        f2 = ImageIO.read(new File("Imagens/fase2.bmp"));
+        f2 = ImageIO.read(new File("Imagens/fase3.bmp"));
+        inimigot1 = ImageIO.read(new File("Imagens/inimigo1.bmp"));
         this.iniciar = iniciar;
         this.selecao = selecao;
         this.rotar = rotar;
@@ -812,12 +775,6 @@ public class Jogo extends JPanel /*implements MouseListener, MouseMotionListener
                 square.x = 450;
                 square.y = 220;
             }
-            if (vencer == true) {
-                win.desenhaWin(g2d);
-            }
-            if (perder == true) {
-                lose.desenhaLose(g2d);
-            }
             //colisão do quadrado com a parede
             //g2d.setFont(new Font("Verdana", Font.BOLD, 30));
             //g2d.drawString(String.valueOf(getScore()), 10, 30);
@@ -1322,8 +1279,7 @@ public class Jogo extends JPanel /*implements MouseListener, MouseMotionListener
         }
     }
 
-    public void salvar() throws IOException {
-
+    public void salvar() throws IOException {    
         /*String linha = br.readLine();
         if (linha == null) {
             bw.write("1");

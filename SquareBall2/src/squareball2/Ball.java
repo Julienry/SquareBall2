@@ -35,7 +35,7 @@ public class Ball {
     public Ball(Jogo jogo) throws IOException {
         this.jogo = jogo;
         //this.currentAngle = 0;
-        bola = ImageIO.read(new File("ball.bmp"));
+        bola = ImageIO.read(new File("Imagens/ball.bmp"));
         this.speedx = speedx;
         this.speedy = speedy;
     }

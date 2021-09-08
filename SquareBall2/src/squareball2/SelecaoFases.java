@@ -25,11 +25,11 @@ public class SelecaoFases {
     public int y = 0;
 
     public SelecaoFases(Jogo jogo) throws IOException {
-        seta = ImageIO.read(new File("seta.bmp"));
-        telaS = ImageIO.read(new File("selecaofases.bmp"));
-        fase1 = ImageIO.read(new File("fase1.bmp"));
-        fase2 = ImageIO.read(new File("fase2.bmp"));
-        fase3 = ImageIO.read(new File("fase3.bmp"));
+        seta = ImageIO.read(new File("Imagens/seta.bmp"));
+        telaS = ImageIO.read(new File("Imagens/selecaofases.bmp"));
+        fase1 = ImageIO.read(new File("Imagens/fase1.bmp"));
+        fase2 = ImageIO.read(new File("Imagens/fase2.bmp"));
+        fase3 = ImageIO.read(new File("Imagens/fase3.bmp"));
         this.x = x;
         this.y = y;
         this.jogo = jogo;
